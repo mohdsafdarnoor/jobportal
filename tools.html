@@ -26,223 +26,212 @@
 
     <main class="container">
         <section class="page-header">
-            <h1>AI tools directory</h1>
-            <p>Discover AI tools organized by job search stage</p>
+            <h1>AI Tools Directory</h1>
+            <p>Discover AI tools organized by your job search stage</p>
         </section>
 
         <div class="search-section">
-            <input type="text" id="searchBox" class="search-box" placeholder="Search tools by name, category, or description..." onkeyup="filterTools()">
+            <input type="text" id="searchBox" class="search-box" placeholder="Search tools by name or category..." onkeyup="filterTools()">
         </div>
 
-        <div class="tools-grid" id="toolsGrid">
-            <!-- Orientation Tools -->
-            <div class="tool-card" data-category="orientation" data-name="LinkedIn Career Explorer">
-                <span class="category">Orientation</span>
-                <h3>LinkedIn Career Explorer</h3>
-                <p>Understand part-time role options and skill gaps</p>
-                <a href="https://www.linkedin.com/career-explorer" target="_blank">Visit Tool →</a>
-            </div>
+        <!-- Orientation Stage -->
+        <section class="tools-category">
+            <h2 class="category-title">🎯 Orientation - Finding Opportunities</h2>
+            <div class="tools-grid">
+                <div class="tool-card" data-keywords="linkedin career orientation roles">
+                    <h3>LinkedIn Career Explorer</h3>
+                    <span class="category">Orientation</span>
+                    <p>Understand part-time role options and skill gaps</p>
+                    <a href="https://www.linkedin.com/career-explorer" target="_blank" rel="noopener">Visit Tool →</a>
+                </div>
 
-            <div class="tool-card" data-category="orientation" data-name="CareerExplorer">
-                <span class="category">Orientation</span>
-                <h3>CareerExplorer</h3>
-                <p>Match interests with flexible roles</p>
-                <a href="https://www.careerexplorer.com" target="_blank">Visit Tool →</a>
-            </div>
+                <div class="tool-card" data-keywords="indeed jobs search germany">
+                    <h3>Indeed</h3>
+                    <span class="category">Orientation</span>
+                    <p>Broad job discovery in Germany</p>
+                    <a href="https://de.indeed.com" target="_blank" rel="noopener">Visit Tool →</a>
+                </div>
 
-            <div class="tool-card" data-category="orientation" data-name="Indeed">
-                <span class="category">Orientation</span>
-                <h3>Indeed</h3>
-                <p>Broad part-time job discovery</p>
-                <a href="https://de.indeed.com" target="_blank">Visit Tool →</a>
-            </div>
+                <div class="tool-card" data-keywords="jobmensa students part-time germany">
+                    <h3>JobMensa</h3>
+                    <span class="category">Orientation</span>
+                    <p>Student-focused part-time roles in Germany</p>
+                    <a href="https://www.jobmensa.de" target="_blank" rel="noopener">Visit Tool →</a>
+                </div>
 
-            <div class="tool-card" data-category="orientation" data-name="JobMensa">
-                <span class="category">Orientation</span>
-                <h3>JobMensa</h3>
-                <p>Focused on students and part-time roles in Germany</p>
-                <a href="https://www.jobmensa.de" target="_blank">Visit Tool →</a>
-            </div>
+                <div class="tool-card" data-keywords="stepstone jobs cv upload">
+                    <h3>StepStone</h3>
+                    <span class="category">Orientation</span>
+                    <p>Job listings + CV upload to reach recruiters</p>
+                    <a href="https://www.stepstone.de" target="_blank" rel="noopener">Visit Tool →</a>
+                </div>
 
-            <div class="tool-card" data-category="orientation" data-name="StepStone">
-                <span class="category">Orientation</span>
-                <h3>StepStone</h3>
-                <p>Many job listings including part-time work</p>
-                <a href="https://www.stepstone.de" target="_blank">Visit Tool →</a>
-            </div>
+                <div class="tool-card" data-keywords="handshake internships students">
+                    <h3>Handshake</h3>
+                    <span class="category">Orientation</span>
+                    <p>Student-focused internship discovery</p>
+                    <a href="https://joinhandshake.com" target="_blank" rel="noopener">Visit Tool →</a>
+                </div>
 
-            <div class="tool-card" data-category="orientation" data-name="Handshake">
-                <span class="category">Orientation</span>
-                <h3>Handshake</h3>
-                <p>Student-focused internship discovery</p>
-                <a href="https://www.joinhandshake.com" target="_blank">Visit Tool →</a>
-            </div>
+                <div class="tool-card" data-keywords="eures european jobs eu">
+                    <h3>EURES</h3>
+                    <span class="category">Orientation</span>
+                    <p>European Employment Services for cross-border jobs</p>
+                    <a href="https://eures.europa.eu" target="_blank" rel="noopener">Visit Tool →</a>
+                </div>
 
-            <div class="tool-card" data-category="orientation" data-name="Nextjobs">
-                <span class="category">Orientation</span>
-                <h3>Nextjobs</h3>
-                <p>Graduate student roles</p>
-                <a href="https://www.nextjobs.de" target="_blank">Visit Tool →</a>
-            </div>
+                <div class="tool-card" data-keywords="xing networking germany dach">
+                    <h3>XING</h3>
+                    <span class="category">Orientation</span>
+                    <p>Professional networking in German-speaking markets</p>
+                    <a href="https://www.xing.com" target="_blank" rel="noopener">Visit Tool →</a>
+                </div>
 
-            <div class="tool-card" data-category="orientation" data-name="EURES">
-                <span class="category">Orientation</span>
-                <h3>EURES</h3>
-                <p>European Employment Services</p>
-                <a href="https://ec.europa.eu/eures" target="_blank">Visit Tool →</a>
+                <div class="tool-card" data-keywords="coursera skills courses learning">
+                    <h3>Coursera</h3>
+                    <span class="category">Orientation</span>
+                    <p>Skill preparation and certification courses</p>
+                    <a href="https://www.coursera.org" target="_blank" rel="noopener">Visit Tool →</a>
+                </div>
             </div>
+        </section>
 
-            <div class="tool-card" data-category="orientation" data-name="XING">
-                <span class="category">Orientation</span>
-                <h3>XING</h3>
-                <p>Professional networking in German-speaking markets</p>
-                <a href="https://www.xing.com" target="_blank">Visit Tool →</a>
-            </div>
+        <!-- Application Stage -->
+        <section class="tools-category">
+            <h2 class="category-title">📝 Application - CV & Cover Letters</h2>
+            <div class="tools-grid">
+                <div class="tool-card" data-keywords="canva cv resume design">
+                    <h3>Canva</h3>
+                    <span class="category">Application</span>
+                    <p>Simple, clean CVs with professional templates</p>
+                    <a href="https://www.canva.com" target="_blank" rel="noopener">Visit Tool →</a>
+                </div>
 
-            <!-- Application Tools -->
-            <div class="tool-card" data-category="application" data-name="Canva">
-                <span class="category">Application</span>
-                <h3>Canva</h3>
-                <p>Simple, clean CVs for part-time roles</p>
-                <a href="https://www.canva.com" target="_blank">Visit Tool →</a>
-            </div>
+                <div class="tool-card" data-keywords="resume.io ats cv builder">
+                    <h3>Resume.io</h3>
+                    <span class="category">Application</span>
+                    <p>ATS-friendly resume builder</p>
+                    <a href="https://resume.io" target="_blank" rel="noopener">Visit Tool →</a>
+                </div>
 
-            <div class="tool-card" data-category="application" data-name="Resume.io">
-                <span class="category">Application</span>
-                <h3>Resume.io</h3>
-                <p>ATS-friendly resumes and professional CVs</p>
-                <a href="https://resume.io" target="_blank">Visit Tool →</a>
-            </div>
+                <div class="tool-card" data-keywords="simplify applications tracking autofill">
+                    <h3>Simplify</h3>
+                    <span class="category">Application</span>
+                    <p>Fast applications with tracking and autofill</p>
+                    <a href="https://simplify.jobs" target="_blank" rel="noopener">Visit Tool →</a>
+                </div>
 
-            <div class="tool-card" data-category="application" data-name="Simplify">
-                <span class="category">Application</span>
-                <h3>Simplify</h3>
-                <p>Fast applications tracking and autofill</p>
-                <a href="https://simplify.jobs" target="_blank">Visit Tool →</a>
-            </div>
+                <div class="tool-card" data-keywords="vmock resume feedback scoring">
+                    <h3>VMock</h3>
+                    <span class="category">Application</span>
+                    <p>AI-powered resume feedback and scoring</p>
+                    <a href="https://www.vmock.com" target="_blank" rel="noopener">Visit Tool →</a>
+                </div>
 
-            <div class="tool-card" data-category="application" data-name="Loop CV">
-                <span class="category">Application</span>
-                <h3>Loop CV</h3>
-                <p>Automates part-time applications</p>
-                <a href="https://www.loopcv.pro" target="_blank">Visit Tool →</a>
-            </div>
+                <div class="tool-card" data-keywords="europass cv european standard">
+                    <h3>Europass</h3>
+                    <span class="category">Application</span>
+                    <p>EU-standard CV builder for Europe-wide applications</p>
+                    <a href="https://europass.europa.eu" target="_blank" rel="noopener">Visit Tool →</a>
+                </div>
 
-            <div class="tool-card" data-category="application" data-name="VMock">
-                <span class="category">Application</span>
-                <h3>VMock</h3>
-                <p>Academic resume feedback and scoring optimization</p>
-                <a href="https://www.vmock.com" target="_blank">Visit Tool →</a>
+                <div class="tool-card" data-keywords="cheetah ai cover letter resume">
+                    <h3>Cheetah AI</h3>
+                    <span class="category">Application</span>
+                    <p>AI-generated cover letters and resumes</p>
+                    <a href="https://getcheetah.ai" target="_blank" rel="noopener">Visit Tool →</a>
+                </div>
             </div>
+        </section>
 
-            <div class="tool-card" data-category="application" data-name="Cheetah AI">
-                <span class="category">Application</span>
-                <h3>Cheetah AI</h3>
-                <p>AI cover letters and resumes</p>
-                <a href="https://getcheetah.ai" target="_blank">Visit Tool →</a>
-            </div>
+        <!-- Interview Stage -->
+        <section class="tools-category">
+            <h2 class="category-title">🎤 Interview - Practice & Preparation</h2>
+            <div class="tools-grid">
+                <div class="tool-card" data-keywords="google interview warmup practice">
+                    <h3>Google Interview Warmup</h3>
+                    <span class="category">Interview</span>
+                    <p>Practice common interview questions with AI feedback</p>
+                    <a href="https://grow.google/certificates/interview-warmup" target="_blank" rel="noopener">Visit Tool →</a>
+                </div>
 
-            <div class="tool-card" data-category="application" data-name="Jobsgpt">
-                <span class="category">Application</span>
-                <h3>Jobsgpt</h3>
-                <p>AI internship matching</p>
-                <a href="https://jobsgpt.ai" target="_blank">Visit Tool →</a>
-            </div>
+                <div class="tool-card" data-keywords="yoodli communication speaking confidence">
+                    <h3>Yoodli</h3>
+                    <span class="category">Interview</span>
+                    <p>AI communication coach for better speaking</p>
+                    <a href="https://www.yoodli.ai" target="_blank" rel="noopener">Visit Tool →</a>
+                </div>
 
-            <!-- Interview Tools -->
-            <div class="tool-card" data-category="interview" data-name="Google Interview Warmup">
-                <span class="category">Interview</span>
-                <h3>Google Interview Warmup</h3>
-                <p>Practice common questions for quick hiring interviews</p>
-                <a href="https://grow.google/certificates/interview-warmup" target="_blank">Visit Tool →</a>
-            </div>
+                <div class="tool-card" data-keywords="final round ai star behavioral">
+                    <h3>Final Round AI</h3>
+                    <span class="category">Interview</span>
+                    <p>Structured interview answers using STAR method</p>
+                    <a href="https://www.finalroundai.com" target="_blank" rel="noopener">Visit Tool →</a>
+                </div>
 
-            <div class="tool-card" data-category="interview" data-name="Interview Lift">
-                <span class="category">Interview</span>
-                <h3>Interview Lift</h3>
-                <p>Mock interviews and practice sessions</p>
-                <a href="https://interviewlift.com" target="_blank">Visit Tool →</a>
+                <div class="tool-card" data-keywords="interview lift mock practice">
+                    <h3>Interview Lift</h3>
+                    <span class="category">Interview</span>
+                    <p>Mock interview practice sessions</p>
+                    <a href="https://interviewlift.com" target="_blank" rel="noopener">Visit Tool →</a>
+                </div>
             </div>
+        </section>
 
-            <div class="tool-card" data-category="interview" data-name="Yoodli Interview">
-                <span class="category">Interview</span>
-                <h3>Yoodli Interview</h3>
-                <p>Communication improvement and confidence coaching</p>
-                <a href="https://www.yoodli.ai" target="_blank">Visit Tool →</a>
-            </div>
+        <!-- Onboarding & Work Stage -->
+        <section class="tools-category">
+            <h2 class="category-title">🚀 Onboarding - Starting Your Role</h2>
+            <div class="tools-grid">
+                <div class="tool-card" data-keywords="chatgpt ai writing emails communication">
+                    <h3>ChatGPT</h3>
+                    <span class="category">Onboarding</span>
+                    <p>Emails, FAQs, learning support, and communication</p>
+                    <a href="https://chat.openai.com" target="_blank" rel="noopener">Visit Tool →</a>
+                </div>
 
-            <div class="tool-card" data-category="interview" data-name="Final Round AI">
-                <span class="category">Interview</span>
-                <h3>Final Round AI</h3>
-                <p>Structured interview answers and explanations</p>
-                <a href="https://www.finalroundai.com" target="_blank">Visit Tool →</a>
-            </div>
+                <div class="tool-card" data-keywords="deepl translation german english">
+                    <h3>DeepL</h3>
+                    <span class="category">Onboarding</span>
+                    <p>Professional translation for German/English workplace</p>
+                    <a href="https://www.deepl.com" target="_blank" rel="noopener">Visit Tool →</a>
+                </div>
 
-            <div class="tool-card" data-category="interview" data-name="Elevator Pitch">
-                <span class="category">Interview</span>
-                <h3>Elevator Pitch</h3>
-                <p>30-second self-introduction practice</p>
-                <a href="https://elevatorpitchgenerator.com" target="_blank">Visit Tool →</a>
+                <div class="tool-card" data-keywords="google tools research productivity">
+                    <h3>Google Workspace</h3>
+                    <span class="category">Onboarding</span>
+                    <p>Company research and productivity tools</p>
+                    <a href="https://workspace.google.com" target="_blank" rel="noopener">Visit Tool →</a>
+                </div>
             </div>
+        </section>
 
-            <!-- Onboarding Tools -->
-            <div class="tool-card" data-category="onboarding" data-name="ChatGPT">
-                <span class="category">Onboarding</span>
-                <h3>ChatGPT</h3>
-                <p>Emails, shift communication, FAQs, and learning</p>
-                <a href="https://chat.openai.com" target="_blank">Visit Tool →</a>
-            </div>
+        <!-- Master Thesis Stage -->
+        <section class="tools-category">
+            <h2 class="category-title">🎓 Master Thesis - Company Collaboration</h2>
+            <div class="tools-grid">
+                <div class="tool-card" data-keywords="excelerate thesis company collaboration">
+                    <h3>Excelerate</h3>
+                    <span class="category">Master Thesis</span>
+                    <p>Find companies offering Master thesis projects</p>
+                    <a href="https://excelerate.de/en" target="_blank" rel="noopener">Visit Tool →</a>
+                </div>
 
-            <div class="tool-card" data-category="onboarding" data-name="DeepL">
-                <span class="category">Onboarding</span>
-                <h3>DeepL</h3>
-                <p>Language support, very useful in EU and multilingual workplaces</p>
-                <a href="https://www.deepl.com" target="_blank">Visit Tool →</a>
-            </div>
+                <div class="tool-card" data-keywords="studyond thesis opportunities">
+                    <h3>Studyond</h3>
+                    <span class="category">Master Thesis</span>
+                    <p>Platform connecting students with thesis companies</p>
+                    <a href="https://studyond.com" target="_blank" rel="noopener">Visit Tool →</a>
+                </div>
 
-            <div class="tool-card" data-category="onboarding" data-name="Google Tools">
-                <span class="category">Onboarding</span>
-                <h3>Google Tools</h3>
-                <p>Company role understanding and research</p>
-                <a href="https://www.google.com" target="_blank">Visit Tool →</a>
+                <div class="tool-card" data-keywords="thesisforyou matching platform">
+                    <h3>Thesisforyou</h3>
+                    <span class="category">Master Thesis</span>
+                    <p>Thesis-company matching service</p>
+                    <a href="https://thesisforyou.com/en/english" target="_blank" rel="noopener">Visit Tool →</a>
+                </div>
             </div>
+        </section>
 
-            <div class="tool-card" data-category="onboarding" data-name="Coach">
-                <span class="category">Onboarding</span>
-                <h3>Coach</h3>
-                <p>Research productivity and goal setting</p>
-                <a href="https://www.coach.me" target="_blank">Visit Tool →</a>
-            </div>
-
-            <div class="tool-card" data-category="onboarding" data-name="Career Mastery">
-                <span class="category">Onboarding</span>
-                <h3>Career Mastery</h3>
-                <p>Transition from thesis to job and long-term growth mindset</p>
-                <a href="https://careermastery.com" target="_blank">Visit Tool →</a>
-            </div>
-
-            <!-- Master Thesis Tools -->
-            <div class="tool-card" data-category="thesis" data-name="Excelerate">
-                <span class="category">Master Thesis</span>
-                <h3>Excelerate</h3>
-                <p>Company collaboration for Master thesis</p>
-                <a href="https://excelerate.de/en" target="_blank">Visit Tool →</a>
-            </div>
-
-            <div class="tool-card" data-category="thesis" data-name="Studyond">
-                <span class="category">Master Thesis</span>
-                <h3>Studyond</h3>
-                <p>Find thesis opportunities with companies</p>
-                <a href="https://studyond.com" target="_blank">Visit Tool →</a>
-            </div>
-
-            <div class="tool-card" data-category="thesis" data-name="Thesisforyou">
-                <span class="category">Master Thesis</span>
-                <h3>Thesisforyou</h3>
-                <p>Platform for thesis-company matching</p>
-                <a href="https://thesisforyou.com/en/english" target="_blank">Visit Tool →</a>
-            </div>
-        </div>
     </main>
 
     <footer>
