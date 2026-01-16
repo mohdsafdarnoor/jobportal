@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Prompts | University Job Portal</title>
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+
+  <header class="topbar">
+    <div class="topbar-inner">
+      <div class="logo-box"><img src="assets/hsw-logo.png" alt="Hochschule Wismar logo" /></div>
+      <div class="icon-row">
+        <button class="icon-btn" id="menuOpenBtn" aria-label="Menu">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 6h18v2H3V6zm0 5h18v2H3v-2zm0 5h18v2H3v-2z"/></svg>
+        </button>
+        <a class="icon-btn" href="index.html" aria-label="Home">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3l9 8h-3v10h-5v-6H11v6H6V11H3l9-8z"/></svg>
+        </a>
+      </div>
+    </div>
+  </header>
+
+  <div class="menu-overlay" id="menuOverlay" aria-hidden="true">
+    <aside class="side-menu" role="navigation" aria-label="Site navigation">
+      <h3>University Job Portal</h3>
+      <div class="nav">
+        <a href="index.html" onclick="closeMenu()">Home</a>
+        <a href="tools.html" onclick="closeMenu()">Tools</a>
+        <a href="prompts.html" onclick="closeMenu()">Prompts</a>
+        <a href="guidelines.html" onclick="closeMenu()">Guidelines</a>
+        <a href="contact.html" onclick="closeMenu()">Contact</a>
+      </div>
+      <div class="btn-row">
+        <button class="btn btn-outline" type="button" onclick="closeMenu()">Close</button>
+      </div>
+    </aside>
+  </div>
+
+  <main class="page">
+    <section class="section">
+      <h1 class="h1">AI prompts library</h1>
+      <p class="p">Copy, fill your data, then edit the output to match your real profile.</p>
+    </section>
+
+    <section class="accordion" aria-label="Prompts accordion">
+      <div class="acc-item">
+        <button class="acc-btn" type="button" onclick="toggleAcc(this)">
+          Prompt: CV + role suggestions (no experience)
+          <span class="chev" aria-hidden="true"></span>
+        </button>
+        <div class="acc-panel">
+          <pre class="prompt">I am a [degree] student at [university], currently in [semester]. I have completed coursework in [list courses] and worked on [mention 1-2 academic projects]. I am familiar with [tools/software]. My German level is [A1-C2] and English is [level]. I can work [X] hours per week. I have no prior work experience. Please:
+1) Suggest 5-7 realistic Werkstudent roles suitable for someone with no work experience
+2) Explain which roles are typically open to international students in Germany
+3) Rewrite my academic profile into a professional one-page CV that highlights my strengths and transferable skills
+4) Prepare strong, confident answers to: "Do you have practical experience?"
+5) Advise how to position myself as reliable, structured, and eager to learn</pre>
+        </div>
+      </div>
+
+      <div class="acc-item">
+        <button class="acc-btn" type="button" onclick="toggleAcc(this)">
+          Prompt: Improve CV bullets (0–2 years experience)
+          <span class="chev" aria-hidden="true"></span>
+        </button>
+        <div class="acc-panel">
+          <pre class="prompt">I am a [degree] student with [0-2 years] of experience in [industry/role]. Previously, I worked as [role] where I [key responsibilities]. I used [tools/systems]. I am now applying for Werkstudent positions in [target industry]. Please:
+1) Align my experience with German market expectations
+2) Rewrite my CV bullet points using impact-oriented language
+3) Identify gaps and suggest a 4–6 week plan to close them
+4) Draft a short, professional email to HR
+5) Highlight what German recruiters will value most</pre>
+        </div>
+      </div>
+    </section>
+
+    <footer class="footer">
+      <div>© 2026 University Job Portal | Hochschule Wismar</div>
+      <div>Student project page. Content is informational and AI-supported.</div>
+    </footer>
+  </main>
+
+  <script src="js/main.js"></script>
+</body>
+</html>
