@@ -3,7 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>AI Tools - HS Wismar Job Portal</title>
+    <title>AI Tools Directory - HS Wismar Job Portal</title>
+    <meta name="description" content="Curated AI tools for job search, CV building, and interview preparation">
     <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
@@ -20,7 +21,6 @@
                 <a href="guidelines.html">Guidelines</a>
                 <a href="contact.html">Contact</a>
             </nav>
-            <button class="info-btn" onclick="openModal()" aria-label="Information">ⓘ</button>
         </div>
     </header>
 
@@ -37,7 +37,7 @@
         <!-- Orientation Stage -->
         <section class="tools-category">
             <h2 class="category-title">🎯 Orientation - Finding Opportunities</h2>
-            <div class="tools-grid">
+            <div class="tools-grid" id="toolsGrid">
                 <div class="tool-card" data-keywords="linkedin career orientation roles">
                     <h3>LinkedIn Career Explorer</h3>
                     <span class="category">Orientation</span>
@@ -238,15 +238,6 @@
         <p>&copy; 2026 University Job Portal | Hochschule Wismar</p>
         <p>Student project page. Content is informational and AI-supported.</p>
     </footer>
-
-    <!-- Info Modal -->
-    <div id="infoModal" class="modal">
-        <div class="modal-content">
-            <span class="close" onclick="closeModal()">&times;</span>
-            <h2>Info</h2>
-            <p>Design uses Hochschule Wismar CD web colors (green/anthrazit/grey) and a Meta→Arial fallback approach.</p>
-        </div>
-    </div>
 
     <script src="js/main.js"></script>
 </body>
