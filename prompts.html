@@ -1,87 +1,274 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Prompts | University Job Portal</title>
-  <link rel="stylesheet" href="css/style.css" />
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI Prompts Library - HS Wismar Job Portal</title>
+    <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
-
-  <header class="topbar">
-    <div class="topbar-inner">
-      <div class="logo-box"><img src="assets/hsw-logo.png" alt="Hochschule Wismar logo" /></div>
-      <div class="icon-row">
-        <button class="icon-btn" id="menuOpenBtn" aria-label="Menu">
-          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 6h18v2H3V6zm0 5h18v2H3v-2zm0 5h18v2H3v-2z"/></svg>
-        </button>
-        <a class="icon-btn" href="index.html" aria-label="Home">
-          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3l9 8h-3v10h-5v-6H11v6H6V11H3l9-8z"/></svg>
-        </a>
-      </div>
-    </div>
-  </header>
-
-  <div class="menu-overlay" id="menuOverlay" aria-hidden="true">
-    <aside class="side-menu" role="navigation" aria-label="Site navigation">
-      <h3>University Job Portal</h3>
-      <div class="nav">
-        <a href="index.html" onclick="closeMenu()">Home</a>
-        <a href="tools.html" onclick="closeMenu()">Tools</a>
-        <a href="prompts.html" onclick="closeMenu()">Prompts</a>
-        <a href="guidelines.html" onclick="closeMenu()">Guidelines</a>
-        <a href="contact.html" onclick="closeMenu()">Contact</a>
-      </div>
-      <div class="btn-row">
-        <button class="btn btn-outline" type="button" onclick="closeMenu()">Close</button>
-      </div>
-    </aside>
-  </div>
-
-  <main class="page">
-    <section class="section">
-      <h1 class="h1">AI prompts library</h1>
-      <p class="p">Copy, fill your data, then edit the output to match your real profile.</p>
-    </section>
-
-    <section class="accordion" aria-label="Prompts accordion">
-      <div class="acc-item">
-        <button class="acc-btn" type="button" onclick="toggleAcc(this)">
-          Prompt: CV + role suggestions (no experience)
-          <span class="chev" aria-hidden="true"></span>
-        </button>
-        <div class="acc-panel">
-          <pre class="prompt">I am a [degree] student at [university], currently in [semester]. I have completed coursework in [list courses] and worked on [mention 1-2 academic projects]. I am familiar with [tools/software]. My German level is [A1-C2] and English is [level]. I can work [X] hours per week. I have no prior work experience. Please:
-1) Suggest 5-7 realistic Werkstudent roles suitable for someone with no work experience
-2) Explain which roles are typically open to international students in Germany
-3) Rewrite my academic profile into a professional one-page CV that highlights my strengths and transferable skills
-4) Prepare strong, confident answers to: "Do you have practical experience?"
-5) Advise how to position myself as reliable, structured, and eager to learn</pre>
+    <header>
+        <div class="container header-content">
+            <div class="logo">
+                <img src="assets/hsw-logo.png" alt="Hochschule Wismar">
+            </div>
+            <button class="menu-toggle" onclick="toggleMenu()" aria-label="Toggle menu">☰</button>
+            <nav id="mainNav">
+                <a href="index.html">Home</a>
+                <a href="tools.html">AI Tools</a>
+                <a href="prompts.html" class="active">AI Prompts</a>
+                <a href="guidelines.html">Guidelines</a>
+                <a href="contact.html">Contact</a>
+            </nav>
+            <button class="info-btn" onclick="openModal()" aria-label="Information">ⓘ</button>
         </div>
-      </div>
+    </header>
 
-      <div class="acc-item">
-        <button class="acc-btn" type="button" onclick="toggleAcc(this)">
-          Prompt: Improve CV bullets (0–2 years experience)
-          <span class="chev" aria-hidden="true"></span>
-        </button>
-        <div class="acc-panel">
-          <pre class="prompt">I am a [degree] student with [0-2 years] of experience in [industry/role]. Previously, I worked as [role] where I [key responsibilities]. I used [tools/systems]. I am now applying for Werkstudent positions in [target industry]. Please:
-1) Align my experience with German market expectations
-2) Rewrite my CV bullet points using impact-oriented language
-3) Identify gaps and suggest a 4–6 week plan to close them
-4) Draft a short, professional email to HR
-5) Highlight what German recruiters will value most</pre>
+    <main class="container">
+        <section class="page-header">
+            <h1>AI prompts library</h1>
+            <p>Copy, fill your data, then edit the output to match your real profile.</p>
+        </section>
+
+        <div class="prompts-container">
+            <!-- Werkstudent Prompts -->
+            <div class="accordion">
+                <button class="accordion-btn" onclick="toggleAcc(this)">
+                    <span>Prompt: CV + role suggestions (no experience)</span>
+                    <span class="accordion-icon">▼</span>
+                </button>
+                <div class="accordion-content">
+                    <h3>Background Information to Provide:</h3>
+                    <ul>
+                        <li>Degree and field of study</li>
+                        <li>University and current semester</li>
+                        <li>Relevant coursework or academic projects</li>
+                        <li>Tools, software, or methods familiar with</li>
+                        <li>German and English language level</li>
+                        <li>Weekly availability (hours)</li>
+                    </ul>
+                    <h3>Tasks for ChatGPT:</h3>
+                    <ul>
+                        <li>Suggest realistic Werkstudent roles suitable for candidates with no prior work experience</li>
+                        <li>Explain which roles are typically open to international students</li>
+                        <li>Rewrite my CV to highlight academic strengths and transferable skills</li>
+                        <li>Prepare strong answers to the question "Do you have practical experience?"</li>
+                        <li>Advise how to position myself as reliable and trainable</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="accordion">
+                <button class="accordion-btn" onclick="toggleAcc(this)">
+                    <span>Prompt: Improve CV bullets (0-2 years experience)</span>
+                    <span class="accordion-icon">▼</span>
+                </button>
+                <div class="accordion-content">
+                    <h3>Background Information to Provide:</h3>
+                    <ul>
+                        <li>Degree and field of study</li>
+                        <li>Previous internships, working student jobs, or part-time roles</li>
+                        <li>Key responsibilities handled</li>
+                        <li>Tools, systems, or processes used</li>
+                        <li>Target Werkstudent role or industry</li>
+                    </ul>
+                    <h3>Tasks for ChatGPT:</h3>
+                    <ul>
+                        <li>Align my experience with German market expectations for Werkstudent roles</li>
+                        <li>Rewrite CV bullet points using impact- and contribution-oriented language</li>
+                        <li>Identify gaps and suggest how to close them quickly</li>
+                        <li>Draft a short, professional email to HR expressing interest in a Werkstudent position</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="accordion">
+                <button class="accordion-btn" onclick="toggleAcc(this)">
+                    <span>Prompt: Career shift (role change, no German experience)</span>
+                    <span class="accordion-icon">▼</span>
+                </button>
+                <div class="accordion-content">
+                    <h3>Background Information to Provide:</h3>
+                    <ul>
+                        <li>Previous role or industry</li>
+                        <li>Target role or field in Germany</li>
+                        <li>Transferable skills from previous experience</li>
+                        <li>Reason for career change</li>
+                        <li>Current education or upskilling efforts</li>
+                    </ul>
+                    <h3>Tasks for ChatGPT:</h3>
+                    <ul>
+                        <li>Identify transferable skills relevant to the new role</li>
+                        <li>Rewrite my CV to reduce perceived hiring risk for German employers</li>
+                        <li>Help me position the career shift as logical and intentional</li>
+                        <li>Prepare convincing interview answers explaining the transition</li>
+                        <li>Highlight what German recruiters will worry about and how to address it</li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- Master Thesis Prompts -->
+            <div class="accordion">
+                <button class="accordion-btn" onclick="toggleAcc(this)">
+                    <span>Prompt: Finding companies for a Master's thesis job</span>
+                    <span class="accordion-icon">▼</span>
+                </button>
+                <div class="accordion-content">
+                    <h3>Background Information to Provide:</h3>
+                    <ul>
+                        <li>Degree and specialization</li>
+                        <li>University and thesis requirements</li>
+                        <li>Preferred industry or function</li>
+                        <li>Location preference (Germany city)</li>
+                        <li>Working student or part-time job status</li>
+                    </ul>
+                    <h3>Tasks for ChatGPT:</h3>
+                    <ul>
+                        <li>Identify types of companies in Germany open to Master's thesis collaborations</li>
+                        <li>Suggest departments where Master's theses are commonly offered</li>
+                        <li>Explain differences between corporate, SME, and startup thesis collaborations</li>
+                        <li>List platforms, portals, and strategies to find thesis-friendly companies</li>
+                        <li>Advise how early I should approach companies before thesis start</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="accordion">
+                <button class="accordion-btn" onclick="toggleAcc(this)">
+                    <span>Prompt: Convincing a company to allow thesis with a job</span>
+                    <span class="accordion-icon">▼</span>
+                </button>
+                <div class="accordion-content">
+                    <h3>Background Information to Provide:</h3>
+                    <ul>
+                        <li>Current or target company</li>
+                        <li>Working student or part-time role details</li>
+                        <li>Thesis duration and university requirements</li>
+                        <li>Proposed general thesis area</li>
+                    </ul>
+                    <h3>Tasks for ChatGPT:</h3>
+                    <ul>
+                        <li>Help me frame my Master's thesis as a business solution, not an academic burden</li>
+                        <li>Draft a convincing, professional email to HR or the hiring manager</li>
+                        <li>Address concerns about time commitment and workload balance</li>
+                        <li>Address confidentiality, data access, and IP concerns</li>
+                        <li>Explain how supervision can be kept low-effort for the company</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="accordion">
+                <button class="accordion-btn" onclick="toggleAcc(this)">
+                    <span>Prompt: Defining a business-relevant Master's thesis topic</span>
+                    <span class="accordion-icon">▼</span>
+                </button>
+                <div class="accordion-content">
+                    <h3>Background Information to Provide:</h3>
+                    <ul>
+                        <li>My degree and specialization</li>
+                        <li>Target company or industry</li>
+                        <li>Known business challenges or pain points</li>
+                        <li>Preferred research methods (if any)</li>
+                    </ul>
+                    <h3>Tasks for ChatGPT:</h3>
+                    <ul>
+                        <li>Propose three Master's thesis topics aligned with my degree and company needs</li>
+                        <li>For each topic, explain the business value</li>
+                        <li>Define expected outcomes or deliverables for the company</li>
+                        <li>Explain why each topic is low-risk and practical for the organization</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="accordion">
+                <button class="accordion-btn" onclick="toggleAcc(this)">
+                    <span>Prompt: Common problems in thesis-job combinations</span>
+                    <span class="accordion-icon">▼</span>
+                </button>
+                <div class="accordion-content">
+                    <h3>Background Information to Provide:</h3>
+                    <ul>
+                        <li>Current thesis or job situation</li>
+                        <li>University supervisor expectations</li>
+                        <li>Company supervisor expectations</li>
+                    </ul>
+                    <h3>Tasks for ChatGPT:</h3>
+                    <ul>
+                        <li>Advise how to handle situations where work output is expected but thesis is not recognized</li>
+                        <li>Help resolve conflicts between university requirements and company expectations</li>
+                        <li>Suggest strategies for dealing with low supervisor availability or support</li>
+                        <li>Provide professional communication templates where needed</li>
+                        <li>Highlight my rights and responsibilities as a student in Germany</li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- Internship Prompts -->
+            <div class="accordion">
+                <button class="accordion-btn" onclick="toggleAcc(this)">
+                    <span>Prompt: Internship application (no experience)</span>
+                    <span class="accordion-icon">▼</span>
+                </button>
+                <div class="accordion-content">
+                    <h3>Background Information to Provide:</h3>
+                    <ul>
+                        <li>Degree and field of study</li>
+                        <li>University and current semester</li>
+                        <li>Relevant coursework or academic projects</li>
+                        <li>Target internship role or industry</li>
+                        <li>Duration and start date</li>
+                    </ul>
+                    <h3>Tasks for ChatGPT:</h3>
+                    <ul>
+                        <li>Suggest realistic internship roles for my background</li>
+                        <li>Rewrite my CV to highlight academic achievements and potential</li>
+                        <li>Draft a compelling motivation letter for internship applications</li>
+                        <li>Prepare answers to common internship interview questions</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="accordion">
+                <button class="accordion-btn" onclick="toggleAcc(this)">
+                    <span>Prompt: Full-time job search strategy</span>
+                    <span class="accordion-icon">▼</span>
+                </button>
+                <div class="accordion-content">
+                    <h3>Background Information to Provide:</h3>
+                    <ul>
+                        <li>Degree and specialization</li>
+                        <li>Total years of experience</li>
+                        <li>Previous roles and industries</li>
+                        <li>Target role and industry in Germany</li>
+                        <li>Work permit status (if applicable)</li>
+                    </ul>
+                    <h3>Tasks for ChatGPT:</h3>
+                    <ul>
+                        <li>Create a job search strategy tailored to the German market</li>
+                        <li>Optimize my CV for Applicant Tracking Systems (ATS)</li>
+                        <li>Draft professional cover letters for specific job postings</li>
+                        <li>Prepare for behavioral and technical interviews</li>
+                        <li>Advise on salary negotiations in Germany</li>
+                    </ul>
+                </div>
+            </div>
         </div>
-      </div>
-    </section>
+    </main>
 
-    <footer class="footer">
-      <div>© 2026 University Job Portal | Hochschule Wismar</div>
-      <div>Student project page. Content is informational and AI-supported.</div>
+    <footer>
+        <p>&copy; 2026 University Job Portal | Hochschule Wismar</p>
+        <p>Student project page. Content is informational and AI-supported.</p>
     </footer>
-  </main>
 
-  <script src="js/main.js"></script>
+    <!-- Info Modal -->
+    <div id="infoModal" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeModal()">&times;</span>
+            <h2>Info</h2>
+            <p>Design uses Hochschule Wismar CD web colors (green/anthrazit/grey) and a Meta→Arial fallback approach.</p>
+        </div>
+    </div>
+
+    <script src="js/main.js"></script>
 </body>
 </html>
