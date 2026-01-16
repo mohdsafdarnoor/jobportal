@@ -1,87 +1,169 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Guidelines | University Job Portal</title>
-  <link rel="stylesheet" href="css/style.css" />
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Job Search Guidelines - HS Wismar Job Portal</title>
+    <meta name="description" content="Step-by-step job search guidance for international students in Germany">
+    <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
-
-  <header class="topbar">
-    <div class="topbar-inner">
-      <div class="logo-box"><img src="assets/hsw-logo.png" alt="Hochschule Wismar logo" /></div>
-      <div class="icon-row">
-        <button class="icon-btn" id="menuOpenBtn" aria-label="Menu">
-          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 6h18v2H3V6zm0 5h18v2H3v-2zm0 5h18v2H3v-2z"/></svg>
-        </button>
-        <a class="icon-btn" href="index.html" aria-label="Home">
-          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3l9 8h-3v10h-5v-6H11v6H6V11H3l9-8z"/></svg>
-        </a>
-      </div>
-    </div>
-  </header>
-
-  <div class="menu-overlay" id="menuOverlay" aria-hidden="true">
-    <aside class="side-menu" role="navigation" aria-label="Site navigation">
-      <h3>University Job Portal</h3>
-      <div class="nav">
-        <a href="index.html" onclick="closeMenu()">Home</a>
-        <a href="tools.html" onclick="closeMenu()">Tools</a>
-        <a href="prompts.html" onclick="closeMenu()">Prompts</a>
-        <a href="guidelines.html" onclick="closeMenu()">Guidelines</a>
-        <a href="contact.html" onclick="closeMenu()">Contact</a>
-      </div>
-      <div class="btn-row">
-        <button class="btn btn-outline" type="button" onclick="closeMenu()">Close</button>
-      </div>
-    </aside>
-  </div>
-
-  <main class="page">
-    <section class="section">
-      <h1 class="h1">Student guidelines</h1>
-      <p class="p">Quick rules so you stay safe, credible, and compliant.</p>
-    </section>
-
-    <section class="block">
-      <h2 class="h2">Rules</h2>
-      <p class="p">Verify facts, write in your own voice, and protect your personal data.</p>
-      <hr class="hr-green" />
-    </section>
-
-    <section class="section">
-      <div class="accordion">
-        <div class="acc-item">
-          <button class="acc-btn" type="button" onclick="toggleAcc(this)">
-            Verify & personalize
-            <span class="chev" aria-hidden="true"></span>
-          </button>
-          <div class="acc-panel">Always validate facts and tailor outputs to your true experience.</div>
+    <header>
+        <div class="container header-content">
+            <div class="logo">
+                <img src="assets/hsw-logo.png" alt="Hochschule Wismar">
+            </div>
+            <button class="menu-toggle" onclick="toggleMenu()" aria-label="Toggle menu">☰</button>
+            <nav id="mainNav">
+                <a href="index.html">Home</a>
+                <a href="tools.html">AI Tools</a>
+                <a href="prompts.html">AI Prompts</a>
+                <a href="guidelines.html" class="active">Guidelines</a>
+                <a href="contact.html">Contact</a>
+            </nav>
         </div>
-        <div class="acc-item">
-          <button class="acc-btn" type="button" onclick="toggleAcc(this)">
-            Avoid plagiarism
-            <span class="chev" aria-hidden="true"></span>
-          </button>
-          <div class="acc-panel">Do not copy AI text blindly. Rewrite in your voice and add evidence.</div>
-        </div>
-        <div class="acc-item">
-          <button class="acc-btn" type="button" onclick="toggleAcc(this)">
-            Protect your data
-            <span class="chev" aria-hidden="true"></span>
-          </button>
-          <div class="acc-panel">Do not paste passport, bank, or private IDs into tools.</div>
-        </div>
-      </div>
-    </section>
+    </header>
 
-    <footer class="footer">
-      <div>© 2026 University Job Portal | Hochschule Wismar</div>
-      <div>Student project page. Content is informational and AI-supported.</div>
+    <main class="container">
+        <section class="page-header">
+            <h1>Job Search Guidelines</h1>
+            <p>Practical guidance for international students seeking employment in Germany</p>
+        </section>
+
+        <div class="guidelines-content">
+            <h2>Part-Time Jobs (Werkstudent)</h2>
+            <p>As an international student in Germany, you can work up to 20 hours per week during the semester and full-time during semester breaks.</p>
+            
+            <h3>Where to Find Part-Time Jobs</h3>
+            <ul>
+                <li><strong>JobMensa:</strong> Student-focused platform with local part-time opportunities</li>
+                <li><strong>StepStone:</strong> Upload your CV and let recruiters find you</li>
+                <li><strong>Indeed:</strong> Broad job search with filters for students</li>
+                <li><strong>University Career Center:</strong> Check your university's job board</li>
+            </ul>
+
+            <h3>Application Process</h3>
+            <ol>
+                <li>Prepare a German-style CV (Lebenslauf) - typically 1-2 pages, photo optional but common</li>
+                <li>Write a cover letter (Anschreiben) in German if the job ad is in German</li>
+                <li>Include relevant academic projects if you have no work experience</li>
+                <li>Apply through company websites or job portals</li>
+                <li>Follow up after 1-2 weeks if you don't hear back</li>
+            </ol>
+
+            <h3>Legal Requirements</h3>
+            <ul>
+                <li>Work permit: Check your visa conditions (most student visas allow 120 full days or 240 half days per year)</li>
+                <li>Tax ID (Steueridentifikationsnummer): Apply at your local tax office</li>
+                <li>Health insurance: Must be enrolled during employment</li>
+                <li>Registration (Anmeldung): Must be registered at your local address</li>
+            </ul>
+
+            <hr>
+
+            <h2>Internships (Praktikum)</h2>
+            <p>Internships in Germany typically last 3-6 months and can be mandatory (Pflichtpraktikum) or voluntary (freiwilliges Praktikum).</p>
+
+            <h3>Where to Find Internships</h3>
+            <ul>
+                <li><strong>Handshake:</strong> University-connected internship platform</li>
+                <li><strong>LinkedIn Jobs:</strong> Filter by "Internship" and location</li>
+                <li><strong>Company websites:</strong> Check career pages of target companies directly</li>
+                <li><strong>meinpraktikum.de:</strong> German internship portal with reviews</li>
+            </ul>
+
+            <h3>Application Timeline</h3>
+            <ul>
+                <li>Large companies: Apply 3-6 months in advance</li>
+                <li>SMEs and startups: Apply 1-3 months in advance</li>
+                <li>Rolling applications: Apply as soon as you find a match</li>
+            </ul>
+
+            <h3>Key Application Documents</h3>
+            <ol>
+                <li>CV with relevant coursework and projects</li>
+                <li>Cover letter explaining motivation and fit</li>
+                <li>Academic transcript (if requested)</li>
+                <li>References (if available)</li>
+            </ol>
+
+            <hr>
+
+            <h2>Master Thesis with Company</h2>
+            <p>Many students in Germany complete their Master thesis in collaboration with a company, combining academic research with practical business problems.</p>
+
+            <h3>Finding Thesis Opportunities</h3>
+            <ul>
+                <li><strong>Excelerate:</strong> Platform connecting students with thesis-offering companies</li>
+                <li><strong>Studyond:</strong> Thesis project matching service</li>
+                <li><strong>Thesisforyou:</strong> Database of company thesis topics</li>
+                <li><strong>Direct contact:</strong> Reach out to companies where you've worked as Werkstudent</li>
+            </ul>
+
+            <h3>How to Pitch Your Thesis</h3>
+            <ol>
+                <li>Identify a business problem the company faces</li>
+                <li>Frame your thesis as solving this problem</li>
+                <li>Emphasize low supervision effort needed</li>
+                <li>Clarify university requirements and timeline</li>
+                <li>Discuss data access and confidentiality early</li>
+            </ol>
+
+            <h3>Timeline</h3>
+            <ul>
+                <li>Start searching: 6-9 months before thesis start</li>
+                <li>Initial contact and topic discussion: 4-6 months before</li>
+                <li>Formal agreement and university approval: 2-3 months before</li>
+            </ul>
+
+            <hr>
+
+            <h2>Full-Time Jobs After Graduation</h2>
+            <p>After completing your degree, you have 18 months to find a job related to your field of study (Job Seeking Visa).</p>
+
+            <h3>Where to Search</h3>
+            <ul>
+                <li><strong>EURES:</strong> European-wide job portal</li>
+                <li><strong>XING:</strong> Professional network for DACH region</li>
+                <li><strong>LinkedIn:</strong> International professional network</li>
+                <li><strong>StepStone:</strong> Major German job board</li>
+            </ul>
+
+            <h3>Application Strategy</h3>
+            <ol>
+                <li>Optimize CV for ATS (Applicant Tracking Systems)</li>
+                <li>Tailor each application to the specific role</li>
+                <li>Network through LinkedIn and XING</li>
+                <li>Attend career fairs and company events</li>
+                <li>Consider recruiting agencies specializing in your field</li>
+            </ol>
+
+            <h3>Work Permit Transition</h3>
+            <ul>
+                <li>Job Seeking Visa: 18 months to find a job related to your degree</li>
+                <li>EU Blue Card: For highly qualified workers (salary threshold applies)</li>
+                <li>Work permit: Standard work authorization after job offer</li>
+            </ul>
+
+            <hr>
+
+            <h2>General Tips for Success</h2>
+            <ul>
+                <li><strong>Learn German:</strong> Even basic German significantly increases job opportunities</li>
+                <li><strong>Network actively:</strong> Attend meetups, conferences, and university events</li>
+                <li><strong>Customize applications:</strong> Never send generic CVs or cover letters</li>
+                <li><strong>Follow up:</strong> Send polite follow-up emails after applications and interviews</li>
+                <li><strong>Leverage AI tools:</strong> Use tools from this portal to optimize your applications</li>
+                <li><strong>Be patient:</strong> The German hiring process can take 4-8 weeks from application to offer</li>
+            </ul>
+        </div>
+    </main>
+
+    <footer>
+        <p>&copy; 2026 University Job Portal | Hochschule Wismar</p>
+        <p>Student project page. Content is informational and AI-supported.</p>
     </footer>
-  </main>
 
-  <script src="js/main.js"></script>
+    <script src="js/main.js"></script>
 </body>
 </html>
