@@ -1,87 +1,264 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Prompts | University Job Portal</title>
-  <link rel="stylesheet" href="css/style.css" />
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI Tools - HS Wismar Job Portal</title>
+    <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
-
-  <header class="topbar">
-    <div class="topbar-inner">
-      <div class="logo-box"><img src="assets/hsw-logo.png" alt="Hochschule Wismar logo" /></div>
-      <div class="icon-row">
-        <button class="icon-btn" id="menuOpenBtn" aria-label="Menu">
-          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 6h18v2H3V6zm0 5h18v2H3v-2zm0 5h18v2H3v-2z"/></svg>
-        </button>
-        <a class="icon-btn" href="index.html" aria-label="Home">
-          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3l9 8h-3v10h-5v-6H11v6H6V11H3l9-8z"/></svg>
-        </a>
-      </div>
-    </div>
-  </header>
-
-  <div class="menu-overlay" id="menuOverlay" aria-hidden="true">
-    <aside class="side-menu" role="navigation" aria-label="Site navigation">
-      <h3>University Job Portal</h3>
-      <div class="nav">
-        <a href="index.html" onclick="closeMenu()">Home</a>
-        <a href="tools.html" onclick="closeMenu()">Tools</a>
-        <a href="prompts.html" onclick="closeMenu()">Prompts</a>
-        <a href="guidelines.html" onclick="closeMenu()">Guidelines</a>
-        <a href="contact.html" onclick="closeMenu()">Contact</a>
-      </div>
-      <div class="btn-row">
-        <button class="btn btn-outline" type="button" onclick="closeMenu()">Close</button>
-      </div>
-    </aside>
-  </div>
-
-  <main class="page">
-    <section class="section">
-      <h1 class="h1">AI prompts library</h1>
-      <p class="p">Copy, fill your data, then edit the output to match your real profile.</p>
-    </section>
-
-    <section class="accordion" aria-label="Prompts accordion">
-      <div class="acc-item">
-        <button class="acc-btn" type="button" onclick="toggleAcc(this)">
-          Prompt: CV + role suggestions (no experience)
-          <span class="chev" aria-hidden="true"></span>
-        </button>
-        <div class="acc-panel">
-          <pre class="prompt">I am a [degree] student at [university], currently in [semester]. I have completed coursework in [list courses] and worked on [mention 1-2 academic projects]. I am familiar with [tools/software]. My German level is [A1-C2] and English is [level]. I can work [X] hours per week. I have no prior work experience. Please:
-1) Suggest 5-7 realistic Werkstudent roles suitable for someone with no work experience
-2) Explain which roles are typically open to international students in Germany
-3) Rewrite my academic profile into a professional one-page CV that highlights my strengths and transferable skills
-4) Prepare strong, confident answers to: "Do you have practical experience?"
-5) Advise how to position myself as reliable, structured, and eager to learn</pre>
+    <header>
+        <div class="container header-content">
+            <div class="logo">
+                <img src="assets/hsw-logo.png" alt="Hochschule Wismar">
+            </div>
+            <button class="menu-toggle" onclick="toggleMenu()" aria-label="Toggle menu">☰</button>
+            <nav id="mainNav">
+                <a href="index.html">Home</a>
+                <a href="tools.html" class="active">AI Tools</a>
+                <a href="prompts.html">AI Prompts</a>
+                <a href="guidelines.html">Guidelines</a>
+                <a href="contact.html">Contact</a>
+            </nav>
+            <button class="info-btn" onclick="openModal()" aria-label="Information">ⓘ</button>
         </div>
-      </div>
+    </header>
 
-      <div class="acc-item">
-        <button class="acc-btn" type="button" onclick="toggleAcc(this)">
-          Prompt: Improve CV bullets (0–2 years experience)
-          <span class="chev" aria-hidden="true"></span>
-        </button>
-        <div class="acc-panel">
-          <pre class="prompt">I am a [degree] student with [0-2 years] of experience in [industry/role]. Previously, I worked as [role] where I [key responsibilities]. I used [tools/systems]. I am now applying for Werkstudent positions in [target industry]. Please:
-1) Align my experience with German market expectations
-2) Rewrite my CV bullet points using impact-oriented language
-3) Identify gaps and suggest a 4–6 week plan to close them
-4) Draft a short, professional email to HR
-5) Highlight what German recruiters will value most</pre>
+    <main class="container">
+        <section class="page-header">
+            <h1>AI tools directory</h1>
+            <p>Discover AI tools organized by job search stage</p>
+        </section>
+
+        <div class="search-section">
+            <input type="text" id="searchBox" class="search-box" placeholder="Search tools by name, category, or description..." onkeyup="filterTools()">
         </div>
-      </div>
-    </section>
 
-    <footer class="footer">
-      <div>© 2026 University Job Portal | Hochschule Wismar</div>
-      <div>Student project page. Content is informational and AI-supported.</div>
+        <div class="tools-grid" id="toolsGrid">
+            <!-- Orientation Tools -->
+            <div class="tool-card" data-category="orientation" data-name="LinkedIn Career Explorer">
+                <span class="category">Orientation</span>
+                <h3>LinkedIn Career Explorer</h3>
+                <p>Understand part-time role options and skill gaps</p>
+                <a href="https://www.linkedin.com/career-explorer" target="_blank">Visit Tool →</a>
+            </div>
+
+            <div class="tool-card" data-category="orientation" data-name="CareerExplorer">
+                <span class="category">Orientation</span>
+                <h3>CareerExplorer</h3>
+                <p>Match interests with flexible roles</p>
+                <a href="https://www.careerexplorer.com" target="_blank">Visit Tool →</a>
+            </div>
+
+            <div class="tool-card" data-category="orientation" data-name="Indeed">
+                <span class="category">Orientation</span>
+                <h3>Indeed</h3>
+                <p>Broad part-time job discovery</p>
+                <a href="https://de.indeed.com" target="_blank">Visit Tool →</a>
+            </div>
+
+            <div class="tool-card" data-category="orientation" data-name="JobMensa">
+                <span class="category">Orientation</span>
+                <h3>JobMensa</h3>
+                <p>Focused on students and part-time roles in Germany</p>
+                <a href="https://www.jobmensa.de" target="_blank">Visit Tool →</a>
+            </div>
+
+            <div class="tool-card" data-category="orientation" data-name="StepStone">
+                <span class="category">Orientation</span>
+                <h3>StepStone</h3>
+                <p>Many job listings including part-time work</p>
+                <a href="https://www.stepstone.de" target="_blank">Visit Tool →</a>
+            </div>
+
+            <div class="tool-card" data-category="orientation" data-name="Handshake">
+                <span class="category">Orientation</span>
+                <h3>Handshake</h3>
+                <p>Student-focused internship discovery</p>
+                <a href="https://www.joinhandshake.com" target="_blank">Visit Tool →</a>
+            </div>
+
+            <div class="tool-card" data-category="orientation" data-name="Nextjobs">
+                <span class="category">Orientation</span>
+                <h3>Nextjobs</h3>
+                <p>Graduate student roles</p>
+                <a href="https://www.nextjobs.de" target="_blank">Visit Tool →</a>
+            </div>
+
+            <div class="tool-card" data-category="orientation" data-name="EURES">
+                <span class="category">Orientation</span>
+                <h3>EURES</h3>
+                <p>European Employment Services</p>
+                <a href="https://ec.europa.eu/eures" target="_blank">Visit Tool →</a>
+            </div>
+
+            <div class="tool-card" data-category="orientation" data-name="XING">
+                <span class="category">Orientation</span>
+                <h3>XING</h3>
+                <p>Professional networking in German-speaking markets</p>
+                <a href="https://www.xing.com" target="_blank">Visit Tool →</a>
+            </div>
+
+            <!-- Application Tools -->
+            <div class="tool-card" data-category="application" data-name="Canva">
+                <span class="category">Application</span>
+                <h3>Canva</h3>
+                <p>Simple, clean CVs for part-time roles</p>
+                <a href="https://www.canva.com" target="_blank">Visit Tool →</a>
+            </div>
+
+            <div class="tool-card" data-category="application" data-name="Resume.io">
+                <span class="category">Application</span>
+                <h3>Resume.io</h3>
+                <p>ATS-friendly resumes and professional CVs</p>
+                <a href="https://resume.io" target="_blank">Visit Tool →</a>
+            </div>
+
+            <div class="tool-card" data-category="application" data-name="Simplify">
+                <span class="category">Application</span>
+                <h3>Simplify</h3>
+                <p>Fast applications tracking and autofill</p>
+                <a href="https://simplify.jobs" target="_blank">Visit Tool →</a>
+            </div>
+
+            <div class="tool-card" data-category="application" data-name="Loop CV">
+                <span class="category">Application</span>
+                <h3>Loop CV</h3>
+                <p>Automates part-time applications</p>
+                <a href="https://www.loopcv.pro" target="_blank">Visit Tool →</a>
+            </div>
+
+            <div class="tool-card" data-category="application" data-name="VMock">
+                <span class="category">Application</span>
+                <h3>VMock</h3>
+                <p>Academic resume feedback and scoring optimization</p>
+                <a href="https://www.vmock.com" target="_blank">Visit Tool →</a>
+            </div>
+
+            <div class="tool-card" data-category="application" data-name="Cheetah AI">
+                <span class="category">Application</span>
+                <h3>Cheetah AI</h3>
+                <p>AI cover letters and resumes</p>
+                <a href="https://getcheetah.ai" target="_blank">Visit Tool →</a>
+            </div>
+
+            <div class="tool-card" data-category="application" data-name="Jobsgpt">
+                <span class="category">Application</span>
+                <h3>Jobsgpt</h3>
+                <p>AI internship matching</p>
+                <a href="https://jobsgpt.ai" target="_blank">Visit Tool →</a>
+            </div>
+
+            <!-- Interview Tools -->
+            <div class="tool-card" data-category="interview" data-name="Google Interview Warmup">
+                <span class="category">Interview</span>
+                <h3>Google Interview Warmup</h3>
+                <p>Practice common questions for quick hiring interviews</p>
+                <a href="https://grow.google/certificates/interview-warmup" target="_blank">Visit Tool →</a>
+            </div>
+
+            <div class="tool-card" data-category="interview" data-name="Interview Lift">
+                <span class="category">Interview</span>
+                <h3>Interview Lift</h3>
+                <p>Mock interviews and practice sessions</p>
+                <a href="https://interviewlift.com" target="_blank">Visit Tool →</a>
+            </div>
+
+            <div class="tool-card" data-category="interview" data-name="Yoodli Interview">
+                <span class="category">Interview</span>
+                <h3>Yoodli Interview</h3>
+                <p>Communication improvement and confidence coaching</p>
+                <a href="https://www.yoodli.ai" target="_blank">Visit Tool →</a>
+            </div>
+
+            <div class="tool-card" data-category="interview" data-name="Final Round AI">
+                <span class="category">Interview</span>
+                <h3>Final Round AI</h3>
+                <p>Structured interview answers and explanations</p>
+                <a href="https://www.finalroundai.com" target="_blank">Visit Tool →</a>
+            </div>
+
+            <div class="tool-card" data-category="interview" data-name="Elevator Pitch">
+                <span class="category">Interview</span>
+                <h3>Elevator Pitch</h3>
+                <p>30-second self-introduction practice</p>
+                <a href="https://elevatorpitchgenerator.com" target="_blank">Visit Tool →</a>
+            </div>
+
+            <!-- Onboarding Tools -->
+            <div class="tool-card" data-category="onboarding" data-name="ChatGPT">
+                <span class="category">Onboarding</span>
+                <h3>ChatGPT</h3>
+                <p>Emails, shift communication, FAQs, and learning</p>
+                <a href="https://chat.openai.com" target="_blank">Visit Tool →</a>
+            </div>
+
+            <div class="tool-card" data-category="onboarding" data-name="DeepL">
+                <span class="category">Onboarding</span>
+                <h3>DeepL</h3>
+                <p>Language support, very useful in EU and multilingual workplaces</p>
+                <a href="https://www.deepl.com" target="_blank">Visit Tool →</a>
+            </div>
+
+            <div class="tool-card" data-category="onboarding" data-name="Google Tools">
+                <span class="category">Onboarding</span>
+                <h3>Google Tools</h3>
+                <p>Company role understanding and research</p>
+                <a href="https://www.google.com" target="_blank">Visit Tool →</a>
+            </div>
+
+            <div class="tool-card" data-category="onboarding" data-name="Coach">
+                <span class="category">Onboarding</span>
+                <h3>Coach</h3>
+                <p>Research productivity and goal setting</p>
+                <a href="https://www.coach.me" target="_blank">Visit Tool →</a>
+            </div>
+
+            <div class="tool-card" data-category="onboarding" data-name="Career Mastery">
+                <span class="category">Onboarding</span>
+                <h3>Career Mastery</h3>
+                <p>Transition from thesis to job and long-term growth mindset</p>
+                <a href="https://careermastery.com" target="_blank">Visit Tool →</a>
+            </div>
+
+            <!-- Master Thesis Tools -->
+            <div class="tool-card" data-category="thesis" data-name="Excelerate">
+                <span class="category">Master Thesis</span>
+                <h3>Excelerate</h3>
+                <p>Company collaboration for Master thesis</p>
+                <a href="https://excelerate.de/en" target="_blank">Visit Tool →</a>
+            </div>
+
+            <div class="tool-card" data-category="thesis" data-name="Studyond">
+                <span class="category">Master Thesis</span>
+                <h3>Studyond</h3>
+                <p>Find thesis opportunities with companies</p>
+                <a href="https://studyond.com" target="_blank">Visit Tool →</a>
+            </div>
+
+            <div class="tool-card" data-category="thesis" data-name="Thesisforyou">
+                <span class="category">Master Thesis</span>
+                <h3>Thesisforyou</h3>
+                <p>Platform for thesis-company matching</p>
+                <a href="https://thesisforyou.com/en/english" target="_blank">Visit Tool →</a>
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        <p>&copy; 2026 University Job Portal | Hochschule Wismar</p>
+        <p>Student project page. Content is informational and AI-supported.</p>
     </footer>
-  </main>
 
-  <script src="js/main.js"></script>
+    <!-- Info Modal -->
+    <div id="infoModal" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeModal()">&times;</span>
+            <h2>Info</h2>
+            <p>Design uses Hochschule Wismar CD web colors (green/anthrazit/grey) and a Meta→Arial fallback approach.</p>
+        </div>
+    </div>
+
+    <script src="js/main.js"></script>
 </body>
 </html>
